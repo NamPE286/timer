@@ -97,9 +97,6 @@ export default function Home({playerName, setPlayerName, playerNameRef}) {
             setIsRunning(false)
             isRunning1 = false
             isStartDisabled = true
-            if (e.key == 'Backspace') {
-                isCanceled = true
-            }
             return
         }
         if (e.key == 'n') {
@@ -209,7 +206,6 @@ export default function Home({playerName, setPlayerName, playerNameRef}) {
                 <>
                     <div className={styles.manual}>
                         {showKeyBinding('Any', 'Stop timer')}
-                        {showKeyBinding('Backspace', 'Cancel solve')}
                     </div>
                 </>
             )
