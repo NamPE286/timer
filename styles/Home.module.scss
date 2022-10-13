@@ -1,0 +1,166 @@
+.topPanel{
+  background-color: white;
+  width: fit-content;
+  margin-inline: auto;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s all;
+  svg{
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
+.time{
+  font-size: 85px;
+  width: fit-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-80px, -50%);
+  pointer-events: none;
+  user-select: none;
+  label{
+    font-size: 60px;
+  }
+  p{
+    font-size: 20px;
+  }
+}
+.manual{
+  width: fit-content;
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-right: -50%;
+  border-radius: 15px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  span{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+.key{
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 5px;
+  color: rgb(78, 78, 78);
+  background-color: rgb(224, 224, 224);
+}
+.desc{
+  margin-inline: 10px;
+}
+.leftSidePanel{
+  background-color: white;
+  position: absolute;
+  height: fit-content;
+  width: fit-content;
+  top: 50%;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.3s all;
+  p{
+    font-weight: bold;
+    text-align: center;
+  }
+  span{
+    margin-inline: 15px;
+  }
+}
+.time1{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.time2{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  order: 1;
+}
+.time1:hover{
+  background-color: rgb(175, 175, 175);
+}
+.allTime{
+  max-height: 305px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.rightSidePanel{
+  transition: 0.3s all;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: fit-content;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  span{
+    margin-left: 10px;
+  }
+}
+.rightSidePanel1{
+  transition: 0.3s all;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  div{
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+  }
+  span{
+    margin-left: 10px;
+  }
+  .playerName{
+    font-weight: bold;
+  }
+  .playerTime{
+    float: right;
+    margin-right: 10px;
+  }
+}
+
+.invite{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  svg{
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .topPanel{
+    flex-direction: column;
+    svg{
+      margin-top: 10px;
+    }
+  }
+  .manual{
+    display: none;
+  }
+}
