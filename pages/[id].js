@@ -3,7 +3,7 @@ import generateScramble from 'scramble-generator';
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import { doc, updateDoc, onSnapshot } from 'firebase/firestore';
-import { db } from './db';
+import { db } from './api/db';
 
 export default function Home({playerName, setPlayerName, playerNameRef}) {
     const router = useRouter()
@@ -265,7 +265,7 @@ export default function Home({playerName, setPlayerName, playerNameRef}) {
                             ao12 = (sum - minVal - maxVal) / 10
                         }
                         return (
-                            <div className={styles.time1}><span>{i.toFixed(2)}</span><span>{ao5.toFixed(2)}</span><span>{ao12.toFixed(2)}</span></div>
+                            <div className={styles.time1} key={index}><span>{i.toFixed(2)}</span><span>{ao5.toFixed(2)}</span><span>{ao12.toFixed(2)}</span></div>
                         )
                     })}
                 </div>
@@ -277,14 +277,14 @@ export default function Home({playerName, setPlayerName, playerNameRef}) {
                     console.log(i)
                     if(typeof i.scramble != 'undefined') return null
                     return (
-                        <div>
+                        <div key={index}>
                             <span className={styles.playerName}>{i.name}</span>
                             <span className={styles.playerTime}>{i.isSolving ? '...' : i.time.toFixed(2)}</span>
                         </div>
                     )
                 })}
                 <span className={styles.invite} onClick={() => {
-                    
+
                 }}><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M11 17H7q-2.075 0-3.537-1.463Q2 14.075 2 12t1.463-3.538Q4.925 7 7 7h4v2H7q-1.25 0-2.125.875T4 12q0 1.25.875 2.125T7 15h4Zm-3-4v-2h8v2Zm5 4v-2h4q1.25 0 2.125-.875T20 12q0-1.25-.875-2.125T17 9h-4V7h4q2.075 0 3.538 1.462Q22 9.925 22 12q0 2.075-1.462 3.537Q19.075 17 17 17Z" /></svg>Invite</span>
             </div>
         </>

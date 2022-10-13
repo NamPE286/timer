@@ -3,7 +3,7 @@ import generateScramble from 'scramble-generator';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { addDoc, collection, deleteDoc } from 'firebase/firestore';
-import { db } from './db';
+import { db } from './api/db';
 
 export default function Home({playerName, setPlayerName, playerNameRef}){
   const router = useRouter()
@@ -178,7 +178,7 @@ export default function Home({playerName, setPlayerName, playerNameRef}){
               ao12 = (sum - minVal - maxVal) / 10
             }
             return (
-              <div className={styles.time1}><span>{i.toFixed(2)}</span><span>{ao5.toFixed(2)}</span><span>{ao12.toFixed(2)}</span></div>
+              <div className={styles.time1} key={index}><span>{i.toFixed(2)}</span><span>{ao5.toFixed(2)}</span><span>{ao12.toFixed(2)}</span></div>
             )
           })}
         </div>

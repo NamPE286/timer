@@ -1,5 +1,5 @@
 import { deleteDoc, addDoc, doc, collection, updateDoc, deleteField } from "firebase/firestore"
-import { db } from "../../../db"
+import { db } from "../../db"
 
 export default async function handler(req, res) {
   const { id, field } = req.query
