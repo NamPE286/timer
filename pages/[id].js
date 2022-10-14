@@ -280,7 +280,7 @@ export default function Home({playerName, setPlayerName, playerNameRef}) {
                     )
                 })}
                 <span className={styles.invite} onClick={() => {
-                    const link = 'https://ztimer.pages.dev/' + id.current
+                    const link = 'https://ztimer.vercel.app/' + id.current
                     function copyID(a) {
                         const el = document.createElement("textarea");
                         el.value = String(a);
